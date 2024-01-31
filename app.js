@@ -1,9 +1,10 @@
 score =0;
 cross = true;
 
-window.onload = function(){
-    document.getElementById("auo").play();
-}
+
+var playButtonClicked = false;
+
+
 
 document.onkeydown = function(e){
     if(e.keyCode==38)
@@ -17,6 +18,7 @@ document.onkeydown = function(e){
 
    if(e.keyCode==39)
     {
+        document.getElementById("audioBackground").play();
         hero = document.querySelector('.hero');
         heroX=parseInt(window.getComputedStyle(hero,null).getPropertyValue('left'));
         hero.style.left= heroX+120 +"px";
@@ -24,6 +26,7 @@ document.onkeydown = function(e){
 
     if(e.keyCode==37)
     {
+       
         hero = document.querySelector('.hero');
         heroX=parseInt(window.getComputedStyle(hero,null).getPropertyValue('left'));
         hero.style.left= (heroX-120) +"px";
@@ -53,8 +56,15 @@ setInterval(() =>{
    gameOver.style.visibility = 'visible';
 
    obs.classList.remove('animationObs');
-   document.getElementById("auo").pause();
-   document.getElementById("auoc").play();
+//    document.getElementById("audioBackground").pause();
+
+   document.getElementById("audioCrash").play();
+   document.getElementById("audioBackground").pause();
+   
+   setTimeout(function() {
+    document.getElementById("audioCrash").pause();
+   
+}, 2000);
   
 
    olast=parseInt(window.getComputedStyle(hero,null).getPropertyValue('left'));

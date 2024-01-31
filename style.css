@@ -37,25 +37,36 @@ body
     bottom: 0;
     left: 45vw;
 }
-
-.gameOver
-{
-    top: 120px;
-    font-size: 40px;
+.gameOver {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     visibility: hidden;
+    margin-top: 20px; /* Adjust the margin as needed */
+    background-color: #e74c3c; /* Red background color for contrast */
+    color: #ffffff; /* White text color for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    font-weight: bold;
     text-align: center;
-    font-family: sans-serif;
-
-}
-#scoreCount
-{
-    font-family: sans-serif;
-    position: absolute;
-    right: 45px;
-    top : 26px;
-    border: 2px solid black;
+  }
+#scoreCount {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    margin: 10px; /* Adjust the margin as needed */
+    background-color: #3498db; /* Blue background color */
+    color: #ffffff; /* White text color for contrast */
     padding: 10px;
-}
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
 .animationHero
 {
     animation: hero 0.6s linear;
